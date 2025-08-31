@@ -8,33 +8,75 @@ All conversations and interactions should be conducted in Japanese (日本語).
 
 ## Repository Overview
 
-This is a newly initialized repository for AI-driven development. The repository currently contains only a basic README.md file and appears to be in its initial setup phase.
+This repository manages design specifications for an AI-driven Scrum development organization. It aims to automate Scrum events through AI Agent dialogue using Claude Code's SubAgent functionality.
 
 ## Project Structure
 
-The repository is minimal at this stage:
-- `README.md` - Basic project documentation
-- No source code files present yet
-- No build configuration or dependency management files
+```
+├── README.md - Basic project information
+├── CLAUDE.md - Guidance for Claude Code
+├── roles/ - AI Agent role specifications
+│   ├── ProductOwnerAgent.md - Product Owner Agent behavioral guidelines
+│   ├── ScrumMasterAgent.md - Scrum Master Agent behavioral guidelines  
+│   ├── DeveloperAgent.md - Developer Agent behavioral guidelines
+│   ├── QualityAgent.md - Quality Agent behavioral guidelines
+│   ├── DesignerAgent.md - Designer Agent behavioral guidelines
+│   └── StakeholderAgent.md - Stakeholder Agent behavioral guidelines
+└── scrumEvents/ - Scrum event specifications
+    ├── SprintPlanning.md - Sprint Planning automation specifications
+    ├── DailyScrum.md - Daily Scrum automation specifications
+    ├── SprintReview.md - Sprint Review automation specifications
+    ├── SprintRetrospective.md - Sprint Retrospective specifications
+    └── SprintBacklogRefinement.md - Backlog Refinement specifications
+```
 
-## Development Setup
+## AI Agent System Architecture
 
-Since this is a new repository without established tooling:
-- No package manager configuration found (no package.json, Cargo.toml, pyproject.toml, etc.)
-- No build system or development scripts available
-- No testing framework configured
-- No linting or formatting tools set up
+### Core Concept
+Uses Claude Code's Task tool to launch SubAgents and automate Scrum events through dialogue between role-specialized AI Agents.
 
-## Architecture
+### Agent Roles
+- **ProductOwnerAgent**: Business value maximization and backlog management
+- **ScrumMasterAgent**: Process coordination and inter-Agent facilitation
+- **DeveloperAgent**: Technical implementation (Frontend/Backend/Infrastructure specialization)
+- **QualityAgent**: Quality assurance and testing strategy
+- **DesignerAgent**: UX/UI design and design system management
+- **StakeholderAgent**: External requirements collection and coordination
 
-The codebase architecture is not yet established. This repository appears to be ready for initial development setup and framework selection.
+### Automated Scrum Events
+1. **SprintPlanning**: 4-phase collaborative planning process
+2. **DailyScrum**: Daily automated progress synchronization
+3. **SprintReview**: Automated demo and feedback collection
+4. **SprintRetrospective**: KPT-format continuous improvement
+5. **SprintBacklogRefinement**: Continuous backlog refinement
 
-## Getting Started
+## Development Approach
 
-This repository is in its initial state. Future development will need to:
-1. Choose a programming language and framework
-2. Set up package management and build tools
-3. Establish project structure and architecture
-4. Configure development tooling (linting, testing, etc.)
+### AI-First Development
+This project focuses on AI Agent dialogue design and Scrum process automation rather than code development.
 
-Future updates to this CLAUDE.md file should include specific build commands, testing procedures, and architectural decisions once they are established.
+### Agent Interaction Patterns
+- **Sequential Dialog**: Sequential dialogue between Agents
+- **Parallel Analysis**: Parallel analysis followed by integration
+- **Consensus Building**: Discussion and consensus formation
+
+### Data Sharing Protocol
+Defines data formats for context sharing and session coordination between Agents.
+
+## Usage Guidelines
+
+### For Role Specifications
+Refer to the behavioral guidelines for each Agent in the `roles/` directory as guidance when using Claude Code in specific roles.
+
+### For Event Automation
+Follow the specifications in the `scrumEvents/` directory to implement automation for each Scrum event.
+
+### Agent Activation Example
+```
+# To act as ProductOwnerAgent
+Task(
+    subagent_type="product-owner",
+    description="Backlog analysis",
+    prompt="Follow the behavioral guidelines in roles/ProductOwnerAgent.md to analyze top 5 priority items"
+)
+```
